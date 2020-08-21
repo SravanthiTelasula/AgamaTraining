@@ -1,4 +1,4 @@
-package com.testcases;
+package com.TestNG;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,10 +13,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WrapperMethod {
+public class WrapperMethodHomework {
 
 	WebDriver driver;
 	
@@ -29,6 +32,7 @@ public class WrapperMethod {
 driver.manage().window().maximize();
 driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 driver.get(url);
+System.out.println("opened");
 		}
 	
 	
@@ -120,10 +124,30 @@ driver.findElement(By.id(val)).sendKeys(name);
 		
 	}
 	
+	public void login(String usrname, String password) throws InterruptedException {
+		driver.findElement(By.id("txtUsername")).sendKeys(usrname);
+		driver.findElement(By.id("txtPassword")).sendKeys(password);
+		driver.findElement(By.name("Submit")).click();
+		  System.out.println("logged in");
+		  Thread.sleep(2000);
+	  }
 	
+	public void forgetpassword(String linktxt) throws InterruptedException {
+		  driver.findElement(By.linkText("Forgot your password?")).click();
+			
+		  System.out.println("forget password");
+		  Thread.sleep(2000);
+	  }
+	
+	public void logout() {
 		
+		  System.out.println(" closed");
+		  driver.close();
+		 
+		 
+	  }
 	
 	
-	}
-
+	  }
+		 
 
