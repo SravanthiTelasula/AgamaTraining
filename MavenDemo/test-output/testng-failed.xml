@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.TestNG.TestingWithDataProvider">
+      <class name="com.TestNG.FlipCart">
         <methods>
-          <include name="tearDown"/>
-          <include name="loginTofacebook" invocation-numbers="0 1 2"/>
+          <include name="selectProduct"/>
+          <include name="launchapp"/>
+          <include name="search"/>
+          <include name="addProduct"/>
         </methods>
-      </class> <!-- com.TestNG.TestingWithDataProvider -->
+      </class> <!-- com.TestNG.FlipCart -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

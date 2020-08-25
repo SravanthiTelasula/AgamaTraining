@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OrangeHRM {
 	
-	public class PriorityTestCase {
+	
 		WebDriver driver;
 		@BeforeMethod
 		public void launchapp() {
@@ -25,7 +25,7 @@ public class OrangeHRM {
 		}
 		@AfterMethod
 		public void closeapp() {
-			driver.close();
+			//driver.close();
 			
 		}
 		
@@ -37,5 +37,4 @@ public class OrangeHRM {
 			driver.findElement(By.name("Submit")).click();
 		}
 		
-}
 }
